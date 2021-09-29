@@ -15,6 +15,7 @@ namespace WinFormsLockPage
 
         bool page1Locked = false;
         bool page3Locked = false;
+        bool page2Enabled = false;
         int lockedPage = -1;
         int currentPage = 0;
 
@@ -68,5 +69,35 @@ namespace WinFormsLockPage
                 e.Cancel = true;
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            page2Enabled = !page2Enabled;
+
+            if (page2Enabled == true)
+            {
+                ((Button)sender).Text = "Enable Page 2";
+                foreach (TabPage tab in tabControl1.TabPages)
+                {
+                    if (tab.Text == "Page 2")
+                        tab.Enabled = false;
+                }
+            }
+            else
+            {
+                ((Button)sender).Text = "Disable Page 2";
+                foreach (TabPage tab in tabControl1.TabPages)
+                {
+                    if (tab.Text == "Page 2")
+                        tab.Enabled = true;
+                }
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You clicked me.");
+        }
     }
 }
