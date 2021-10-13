@@ -61,6 +61,7 @@ namespace WinFormsLockPage
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(609, 343);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -158,7 +159,7 @@ namespace WinFormsLockPage
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(171, 64);
             this.button2.TabIndex = 0;
-            this.button2.Text = "Lock \"Page 3\"";
+            this.button2.Text = "Lock \"Page 4\"";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

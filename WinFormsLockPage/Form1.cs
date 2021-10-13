@@ -14,7 +14,7 @@ namespace WinFormsLockPage
     {
 
         bool page1Locked = false;
-        bool page3Locked = false;
+        //bool page3Locked = false;
         bool page2Enabled = false;
         int lockedPage = -1;
         int currentPage = 0;
@@ -43,18 +43,21 @@ namespace WinFormsLockPage
 
         private void button2_Click(object sender, EventArgs e)
         {
-            page3Locked = !page3Locked;
+            //page3Locked = !page3Locked;
 
-            if (page3Locked == true)
-            {
-                ((Button)sender).Text = "Unlock \"Page 3\"";
-                lockedPage = currentPage;
-            }
-            else
-            {
-                ((Button)sender).Text = "Lock \"Page 3\"";
-                lockedPage = -1;
-            }
+            //if (page3Locked == true)
+            //{
+            //    ((Button)sender).Text = "Unlock \"Page 4\"";
+            //    //lockedPage = currentPage;
+            //    lockedPage = 3;
+            //}
+            //else
+            //{
+            //    ((Button)sender).Text = "Lock \"Page 4\"";
+            //    lockedPage = -1;
+            //}
+
+            lockedPage = 3;
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
@@ -98,6 +101,13 @@ namespace WinFormsLockPage
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("You clicked me.");
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //make sure we don't shoot ourself in the foot
+            if (lockedPage == 3 && currentPage == 3)
+                lockedPage = -1;
         }
     }
 }
