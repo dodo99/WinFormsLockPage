@@ -30,7 +30,7 @@ namespace WinFormsLockPage
 
             if (page1Locked == true)
             {
-                ((Button)sender).Text = "Realase \"Page 1\"";
+                ((Button)sender).Text = "Unlock \"Page 1\"";
                 lockedPage = currentPage;
             }
             else
@@ -47,7 +47,7 @@ namespace WinFormsLockPage
 
             if (page3Locked == true)
             {
-                ((Button)sender).Text = "Realase \"Page 3\"";
+                ((Button)sender).Text = "Unlock \"Page 3\"";
                 lockedPage = currentPage;
             }
             else
