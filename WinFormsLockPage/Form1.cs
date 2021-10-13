@@ -30,12 +30,12 @@ namespace WinFormsLockPage
 
             if (page1Locked == true)
             {
-                ((Button)sender).Text = "Realase page (1)";
+                ((Button)sender).Text = "Realase \"Page 1\"";
                 lockedPage = currentPage;
             }
             else
             {
-                ((Button)sender).Text = "Lock this page (1)";
+                ((Button)sender).Text = "Lock \"Page 1\"";
                 lockedPage = -1;
             }
 
@@ -47,12 +47,12 @@ namespace WinFormsLockPage
 
             if (page3Locked == true)
             {
-                ((Button)sender).Text = "Realase page (3)";
+                ((Button)sender).Text = "Realase \"Page 3\"";
                 lockedPage = currentPage;
             }
             else
             {
-                ((Button)sender).Text = "Lock this page (3)";
+                ((Button)sender).Text = "Lock \"Page 3\"";
                 lockedPage = -1;
             }
         }
@@ -76,7 +76,7 @@ namespace WinFormsLockPage
 
             if (page2Enabled == true)
             {
-                ((Button)sender).Text = "Enable Page 2";
+                ((Button)sender).Text = "Enable \"Page 2\"";
                 foreach (TabPage tab in tabControl1.TabPages)
                 {
                     if (tab.Text == "Page 2")
@@ -85,7 +85,7 @@ namespace WinFormsLockPage
             }
             else
             {
-                ((Button)sender).Text = "Disable Page 2";
+                ((Button)sender).Text = "Disable \"Page 2\"";
                 foreach (TabPage tab in tabControl1.TabPages)
                 {
                     if (tab.Text == "Page 2")
