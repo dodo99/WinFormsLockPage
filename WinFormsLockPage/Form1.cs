@@ -103,6 +103,11 @@ namespace WinFormsLockPage
             MessageBox.Show("You clicked me.");
         }
 
-
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //make sure we don't shoot ourself in the foot
+            if (lockedPage == 3 && currentPage == 3)
+                lockedPage = -1;
+        }
     }
 }
