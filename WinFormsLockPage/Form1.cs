@@ -18,6 +18,9 @@ namespace WinFormsLockPage
         bool page2Enabled = false;
         int lockedPage = -1;
         int currentPage = 0;
+        TabPage myTabPage;
+        MyUserPage myUserPage;
+
 
         public Form1()
         {
@@ -108,6 +111,38 @@ namespace WinFormsLockPage
             //make sure we don't shoot ourself in the foot
             if (lockedPage == 3 && currentPage == 3)
                 lockedPage = -1;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            myTabPage = new TabPage();
+            myTabPage.Location = new System.Drawing.Point(4, 22);
+            myTabPage.Name = "myTaPage";
+            myTabPage.Padding = new System.Windows.Forms.Padding(3);
+            myTabPage.Size = new System.Drawing.Size(600, 300);
+            myTabPage.TabIndex = 1;
+            myTabPage.Text = "My Page";
+
+            myUserPage = new MyUserPage();
+            myTabPage.Controls.Add(myUserPage);
+
+            tabControl1.Controls.Add(myTabPage);
+
+            myUserPage.OnMyUserPageLocked += new MyUserPage.MyUserPageLocked(LockMyUserPage);
+            myUserPage.OnMyUserPageUnLocked += new MyUserPage.MyUserPageUnLocked(UnLockMyUserPage);
+
+        }
+
+        private void LockMyUserPage(object sender, EventArgs e)
+        {
+            //4 is "My Page" index
+            lockedPage = 4;
+        }
+
+        private void UnLockMyUserPage(object sender, EventArgs e)
+        {
+            //reset
+            lockedPage = -1;
         }
     }
 }
