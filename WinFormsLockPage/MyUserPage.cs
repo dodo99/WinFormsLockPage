@@ -14,9 +14,9 @@ namespace WinFormsLockPage
     {
 
         public delegate void MyUserPageLocked(object sender, EventArgs e);
-        public event MyUserPageLocked OnMyUserPageLocked;
+        public MyUserPageLocked OnMyUserPageLocked;
         public delegate void MyUserPageUnLocked(object sender, EventArgs e);
-        public event MyUserPageUnLocked OnMyUserPageUnLocked;
+        public MyUserPageUnLocked OnMyUserPageUnLocked;
 
         private bool isPageLocked = false;
 

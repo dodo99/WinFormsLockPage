@@ -46,19 +46,6 @@ namespace WinFormsLockPage
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //page3Locked = !page3Locked;
-
-            //if (page3Locked == true)
-            //{
-            //    ((Button)sender).Text = "Unlock \"Page 4\"";
-            //    //lockedPage = currentPage;
-            //    lockedPage = 3;
-            //}
-            //else
-            //{
-            //    ((Button)sender).Text = "Lock \"Page 4\"";
-            //    lockedPage = -1;
-            //}
 
             lockedPage = 3;
         }
